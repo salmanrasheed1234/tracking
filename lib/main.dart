@@ -13,7 +13,7 @@ void main() async {
         options: const FirebaseOptions(
           apiKey: "AIzaSyD4Y...your-real-api-key...",
           appId: "1:1234567890:android:abcd1234efgh5678",
-          messagingSenderId: "1234567890",
+          messagingSenderId: "1234567890",  
           projectId: "your-project-id",
         ),
       );
