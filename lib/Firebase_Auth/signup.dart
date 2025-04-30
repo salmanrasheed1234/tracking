@@ -1,5 +1,5 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:tracking/exports/exports.dart';
+import 'package:tracking/home.dart';
 
 class FirebaseAuthService {
   static Future<void> signUpWithEmailPassword(
@@ -24,9 +24,8 @@ class FirebaseAuthService {
         password: password,
       );
 
-      // Navigate to home screen after successful signup
       Navigator.of(context).pushReplacement(
-        MaterialPageRoute(builder: (context) => const HomeScreen()),
+        MaterialPageRoute<HomeScreen>(builder: (context) => const HomeScreen()),
       );
     } on FirebaseAuthException catch (e) {
       String message = 'Signup failed';

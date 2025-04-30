@@ -35,8 +35,8 @@ class Expense extends HiveObject {
     Map<String, dynamic> data = doc.data() as Map<String, dynamic>;
     return Expense(
       id: doc.id,
-      amount: data['amount'] ?? 0.0,
-      category: data['category'] ?? '',
+      amount: (data['amount'] as num?)?.toDouble() ?? 0.0,
+      category: (data['category'] as String?) ?? '',
       date: (data['date'] as Timestamp).toDate(),
     );
   }
